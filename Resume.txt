@@ -1,0 +1,175 @@
+apa itu concurency
+visualgo.net
+
+Big O-Notation:
+  Time Complexity:
+	- Constant Time-0(1)
+	  loop dilakukan 1x saja, tak terpengaruh inputan di func	
+	- Linear Time-0(n)
+	  loop dilakukan sebanyak n kali
+	- Linear Time-O(n+m)
+	  loop dilakukan sebanyak n+m kali
+	- Logaritmic time-O(log n)
+	  loop dilakukan (2^x)
+	- Quadratic Time-O(n^2)
+	  loop dilakukan n^2 kali 
+  Space Complexity:
+	- Linear, variabel 1x
+	
+
+Array, map, and Slice
+	- Array, kapasitas tetap
+	  array := [...]int
+	  array := [4]int{1,2,3,4}
+	- Slice, kapasitas dinamis dan kapasitas bertambah 2x ketika ada 	  	  data baru
+	  slice := []int{1,2,3,4}
+	  slice := []int
+	- map, ada key dan value
+	  maps := map[string]int{"key":1, "key":2}
+
+String 
+	import "strings"
+	strings.Contain(str, substr), apakah substr bagian dari str?
+
+	string := "abcda"
+	string = string[1:3] bc
+
+	strings.Replace(string, "a", "o", -1) mengubah semua a menjadi o 	strings.Replace(string, "a", "o", 2) mengubah 1 a menjadi o, dst 3,4,
+
+	insert, menambahkan string
+	index := 2
+	new := string[:index] + "XYZ" + string[index:]
+	output = abXYZcda 
+
+advance function
+	variadic function 
+		func sum(data ...int) int {} //data parameter slice
+		sum(1,2,3) //inputan tidak perlu slice
+
+	Anonymous function
+		sum := func(n int){}
+
+	Closure function
+		fungsi dalam fungsi, mereturn fungsi, dan nilai variable tidak di 		set ke default
+	Defer function
+		defer func(){}
+		func tersebut akan di run di akhir
+		jika ada >1 defer, sifatnya last in first out
+
+Pointer
+	var foo string = "bar"
+	var x *string = &foo
+
+	fmt.Println(x) //0x098929
+	fmt.Println(*x) //"bar"
+	fmt.Println(&x) //0x66781
+	
+
+Struct 
+	Person1 := Student{"adi", "eron", 21}
+	Person2 := Student{
+		fistName = "eron",
+		lastName = "man"	
+	}
+
+method function
+	method yang menempel di struct
+	func (e Employee) fullname() string{
+		return fistrname+lasname
+	}
+
+Sort
+	dengan sort.
+
+Stack 
+	bersifat LIFO
+	push, insert element
+	top, find first element
+	pop, remove element from stack
+
+Queue
+	bersifat FIFO
+	enqueue, insert element
+	dequeue, remove first element
+	frot, check first element
+
+Priority Queue	
+	antrian dengan prioritas min dan max
+	enqueue, insert element
+	deque, remove first element
+	top, check first element
+
+Dequeue
+	2 tempat untuk remove element (depan ,belakang)
+	push_front, insert element front
+	push_back, insert element back
+	dequeue, remove first element
+	front, check first element
+
+Set and Element
+	Set, array unique dan jika ada yang sama maka akan di remove
+	Map, is dictionary
+
+Complete Search (Brute Force)
+	mencari data awal -> akhir
+
+Greedy
+	contoh penerapan mencari jalur tercepat (map),
+	local optimal (cek jalur dengan cepat) keunggulan fast karna cek 1 	jalur namun data tidak selalu optimal
+	global optimal (cek semua kombinasi jalur, dan pilih tercepat), 	keunggulan data optimal namun slow karna cek semua jalur
+
+	penerapan coin change, mencari kombinasi koin paling sedikit untuk 	mencapai target
+
+	huffman coding, activity selection, djikstra algorithm, etc
+
+Binary Search (Divide and Qonquer) O log n
+	menggunakan log
+	data harus sorted
+	data dibagi 2 cari nilai tengah, bagian yang kebih kecil dari target 	tidak akan di 	proses
+	
+
+How to Run and Debug with VisualCode
+
+Caching 
+	penggunaan memory besar dan cpu kecil
+	misal menampilkan data dari db ke web, datanya disimpan di 	redis/memcache sehingga tidak perlu selalu mengambil dari db
+	Top-Down (Memorization)
+	Bottom-Up (Tabbulation)
+
+Sequentials Program
+	dijalankan satu persatu per servisnya, berurutan
+	video, image, web = 9s
+
+Parallel Program
+	dijalankan bersama, syaratnya harus multicore
+	video = 2s
+	image = 3s
+	web 	 = 4s	
+
+Concurrent Program
+	kelebihan di golang adalah concurrent
+	java jg ada
+	dijalankan bersama dan independen, walau single core, hanya ada 	pemecahan
+	video->web->image->video->image->web = 9s
+	time GOMAXPROCS=1 go run main.go //untuk memaksimalkan 1 proc saja
+
+Channel
+	bersifat fifo
+	buffered channel = channel dengan ukuran kapasitas tertentu
+	unbuffered channel = channel dengan 1 kapasitas
+	
+
+Race Condition
+	merupakan kelemahan concurrent programming
+	misal 2 concurrent mengakses 2 var yang sama, maka akan ada race 	condition 	yaitu siapa yang akan akses terlebih dahulu
+	cek race condition dengan "go run -race main.go"
+	cara mengatasi:
+	- waitgroups
+	- channel blocking
+	- mutex
+	 
+Clean Code
+	menggunakan acuan airbnb/google
+	prinsip 
+		keep it so simple
+		don't repeat your code

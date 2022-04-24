@@ -1,0 +1,3 @@
+1. memahami konsep dynamic programming
+2. memeahami penerapan top-down, bottom-up dalam dynamic programming
+3. memahami kelebihan dan kelemahan top-down dan bottom-up

@@ -1,0 +1,3 @@
+1. memahami konsep recursive, number theory, sorting dan searching
+2. penerapan recursive, number theory, sorting dan searching
+3. penggunaan package sort

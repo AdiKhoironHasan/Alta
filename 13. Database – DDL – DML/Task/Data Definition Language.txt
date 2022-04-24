@@ -1,0 +1,105 @@
+-- membuat database alta_online_shop
+CREATE DATABASE alta_online_shop;
+
+
+-- membuat table product
+CREATE TABLE `product` (
+  `id` int(11) NOT NULL,
+  `product_type` varchar(100) NOT NULL,
+  `operators` varchar(100) NOT NULL,
+  `product_description` varchar(255) NOT NULL,
+  `payment_methods` varchar(100) NOT NULL
+)
+
+ALTER TABLE `product`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `product`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+
+-- membuat table user
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `alamat` varchar(255) NOT NULL,
+  `tanggal_lahir` date NOT NULL,
+  `status_user` varchar(30) NOT NULL,
+  `gender` varchar(30) NOT NULL,
+  `created_at` date NOT NULL,
+  `updated_at` date NOT NULL
+)
+
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+
+-- membuat table transaction
+CREATE TABLE `transaction` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `tanggal_pembelian` date NOT NULL,
+  `status_pembelian` varchar(100) NOT NULL
+)
+
+ALTER TABLE `transaction`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `transaction`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `user_id` (`user_id`),
+  ADD UNIQUE KEY `product_id` (`product_id`);
+
+
+-- membuat table kurir
+CREATE TABLE `kurir` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(200) NOT NULL,
+  `created_at` int(11) NOT NULL,
+  `updated_at` int(11) NOT NULL
+)
+
+ALTER TABLE `kurir`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `kurir`
+  ADD PRIMARY KEY (`id`);
+
+
+-- menambah kolom table kurir
+ALTER TABLE `kurir`
+ADD ongkos_dasar varchar(200) NOT NULL;
+
+-- rename table kurir
+ALTER TABLE `kurir`
+RENAME TO `shipping`;
+
+
+-- hapus table shipping
+DROP TABLE `shipping`
+
+
+-- membuat relasi database
+ALTER TABLE `transaction`
+  ADD CONSTRAINT `transaction_product` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `transaction_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

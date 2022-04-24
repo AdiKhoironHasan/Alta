@@ -1,0 +1,3 @@
+1. memahami konsep dan penggunaan array, slice, dan map
+2. memahami perbedaaan array, slice, dan map
+3. memahami konsep dan penggunaan function baik dengan return / tidak

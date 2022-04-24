@@ -1,0 +1,7 @@
+Kekurangan dalam code:
+1. struct userservice dihapus dan menggunakan struct user saja, karena isi userservice adalah struct user
+2. jika menggunakan userservice namanya diganti menjadi userService, agar membedakan kata dan mudah dibaca
+3. variable t pada userservice, seharusnya menggunakan kata yang lebih mudah dipahami dan merepresentasikan fungsinya
+4. func getallusers penamaan nya kurang baik, seharusnya getAllUsers agar mudah dibaca dan dipahami maksudnya
+5. funct getuserbyid penamaanya kurang baik, seharusnya getUserById agar mudah dibaca dan dipahami
+6. penamaan variable pada func getallusers dan getuserbyid seharusnya diganti agar lebih mudah diketahui fungsinya dan tidak hanya satu huruf saja
