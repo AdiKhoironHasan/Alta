@@ -1,0 +1,3 @@
+1. memahami jenis-jenis testing dan konsepnya
+2. memahami konsep dan penerapan unit testing
+3. memahami penerapan unit testing pada endpoint API

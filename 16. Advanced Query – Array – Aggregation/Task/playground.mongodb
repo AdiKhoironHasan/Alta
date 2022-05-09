@@ -1,0 +1,18 @@
+use("books_store");
+
+db.books.aggregate([
+  {
+    $lookup: {
+      from: "authors",
+      localField: "authoriD",
+      foreignField: "_id",
+      as: "authorData",
+    },
+  },
+  {
+    $group: {
+      _id: "$authorData.firstName",
+      number_of_books: { $sum: 1 },
+    },
+  },
+]);

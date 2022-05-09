@@ -1,0 +1,3 @@
+1. memahami konsep komponen dalam system design seperti diagram dan distributed system
+2. memahami konsep job queue, microservices, sql nosql, cachig dan indexing
+3. memahami pembuatan erd dan beberapa syntax nosql

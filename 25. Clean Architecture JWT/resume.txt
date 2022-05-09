@@ -1,0 +1,3 @@
+1. Memahami jwt dalam clean architerture
+2. Dapat menerapkan JWT dalam clean architecture
+3. Berhasil dalam penerapan jwt dengan clean architecture

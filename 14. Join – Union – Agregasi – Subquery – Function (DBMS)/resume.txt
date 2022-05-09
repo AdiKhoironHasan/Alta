@@ -1,0 +1,3 @@
+1. memahami konsep dan penerapan DML di mysql
+2. memahami konsep dan penerapan agregasi di mysql
+3. memahami konsep dan penerapan join, union, sub query, dan function di mysql

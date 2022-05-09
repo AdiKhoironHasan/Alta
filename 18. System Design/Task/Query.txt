@@ -1,0 +1,12 @@
+SQL:
+	SELECT * FROM users;
+
+Redis:
+	SELECT 1;
+
+Neo4j:
+	MATCH (u:Users)
+	RETURN u;
+
+Cassandra:
+	SELECT * FROM Users;

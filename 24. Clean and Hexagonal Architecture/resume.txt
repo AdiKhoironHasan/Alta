@@ -1,0 +1,3 @@
+1. memahami konsep clean dan hexa architercute
+2. memahami kelebihan dan kekurangan clean architecture
+3. mampu menerapkan clean architecture dalam golang

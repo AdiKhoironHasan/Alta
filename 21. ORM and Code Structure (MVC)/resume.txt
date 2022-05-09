@@ -1,0 +1,3 @@
+1. memahami penerapan koneksi golang ke database MySQL dengan library GORM
+2. memahami penerapan database migration dengan GORM
+3. memahami penerapan CRUD dengan GORM

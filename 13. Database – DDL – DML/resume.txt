@@ -1,0 +1,3 @@
+1. memahami konsep dan penerapan schema database di mysql
+2. memahami rancangan database erd dengan drawio
+3. memahami konsep dan penerapan relasi database di mysql
