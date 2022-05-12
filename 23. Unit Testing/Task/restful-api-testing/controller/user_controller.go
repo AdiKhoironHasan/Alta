@@ -56,6 +56,7 @@ func GetUserController(c echo.Context) error {
 	user := model.User{}
 
 	id := c.Param("id")
+	// fmt.Println("idddd=", id)
 	err := config.DB.Where("id = ?", id).First(&user).Error
 
 	if err != nil {

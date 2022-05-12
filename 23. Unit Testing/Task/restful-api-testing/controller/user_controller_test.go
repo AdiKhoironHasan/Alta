@@ -56,7 +56,7 @@ func TestGetUserController(t *testing.T) {
 	for _, testCase := range testCases {
 		c.SetPath(testCase.path)
 
-		assert.NoError(t, GetUserController(c))
+		assert.NoError(t, GetUsersController(c))
 		assert.Equal(t, testCase.expectCode, rec.Code)
 		body := rec.Body.String()
 

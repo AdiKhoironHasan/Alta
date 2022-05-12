@@ -26,7 +26,7 @@ func New() *echo.Echo {
 	// auth
 	eJWT := e.Group("/auth")
 	eJWT.Use(mEcho.JWT([]byte(con.SECRET_JWT)))
-	eJWT.GET("/users", controller.GetUsersController)
+	e.GET("/users", controller.GetUsersController)
 	eJWT.GET("/users/:id", controller.GetUserController)
 	eJWT.DELETE("/users/:id", controller.DeleteUserController)
 	eJWT.PUT("/users/:id", controller.UpdateUserController)

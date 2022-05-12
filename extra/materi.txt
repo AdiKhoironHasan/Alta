@@ -208,3 +208,17 @@ Clean Architerture
 	usecase/service
 	controller/handler
 	driver/data layer/repo
+
+Docker
+	$ docker build -t crud:v1.0.0 .
+	$ docker image ls
+	$ docker rm ###id
+	$ dokcer tag crud:v1.0.0 jawakurakura/crud
+	$ dokcer push jawakurakura/crud
+	$ docker run crud:v1.1.0
+	$ docker run -d crud //background
+	$ docker stop crud
+	$ docker ps
+	$ docker ps -a //list docker with status
+	$ docker run -d -p 3200:3222 crud:v1.0.0
+	
