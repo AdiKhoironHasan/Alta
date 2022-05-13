@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: project-deployment
+spec:
+  replicies: 1
+  selector:
+    matchLabels:
+      app: project-deployment
+    template:
+      metadata:
+        labels:
+          app: project-deployment
+      spec:
+        containers:
+          - name: project-deployment-container
+            image: jawakurakura/project-deployment
+            ports:
+              - containerPort: 9000
+        imagePullSecrets:
+          - name: dockerhub-regcred-1
