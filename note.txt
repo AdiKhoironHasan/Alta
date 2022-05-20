@@ -1,18 +1,20 @@
-7 : kurang 2
+== 7 : kurang 2
 
-9 : no 1,3,4 belum
+== 9 : no 1,3,4 belum
     resume belum
 
-10 : kurang no 3
+== 10 : kurang no 3
 
 14 : task 6,7,8 belum (mysql advance)
 	
-17 : task dan resume belum (cli)
+== 17 : task dan resume belum (cli)
 
-23 : task 2 belum (Unit Testing API)
+== 23 : task 2 belum (Unit Testing API)
 
-26 : Belum Semua (CA Unit Test)
+== 26 : Belum Semua (CA Unit Test)
 
+
+28-29 belom
 
 8qq5VxStr$gT8Mv
 

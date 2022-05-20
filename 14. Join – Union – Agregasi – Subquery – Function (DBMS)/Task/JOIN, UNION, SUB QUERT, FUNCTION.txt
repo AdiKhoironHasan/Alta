@@ -1,0 +1,31 @@
+1. Gabungkan data transaksi dari user id 1 dan user id 2
+SELECT USERS.*, TRANSACTIONS.* FROM USERS INNER JOIN TRANSACTIONS ON users.id = TRANSACTIONS.user_id AND (users.id ='1' OR users.id ='2');
+
+
+2. Tampilkan jumlah harga transaksi user id 1
+SELECT SUM(TRANSACTIONS.total_price) FROM USERS INNER JOIN TRANSACTIONS ON users.id = TRANSACTIONS.user_id AND users.id ='1';
+
+
+3. Tampilkan total transaksi dengan product type 2
+SELECT COUNT(product_types.id) FROM transaction_details 
+INNER JOIN products ON transaction_details.product_id = products.id 
+INNER JOIN product_types ON  products.id = product_types.id
+AND product_types.id = '2';
+
+
+4. Tampilkan semua field table product dan field name table product type yang saling berhubungan
+SELECT products.*, product_types.name FROM products
+INNER JOIN product_types ON  products.id = product_types.id;
+
+
+5. Tampilkan semua field table transaction, field name table product dan field name table user
+SELECT transactions.*, products.`name`, users.name FROM transaction_details, products, transactions, users WHERE 
+transaction_details.TRANSACTION_ID = transactions.id AND 
+transaction_details.product_id = products.id AND
+transactions.user_id = users.id;
+
+6. Buat function setelah data transaksi dihapus maka transaction_details terhapus juga dengan transaction id yang dimaksud
+
+7. Buat function setelah data transaksi detail dihapus maka data total_qty terupdate berdasarkan qty data transaction id yang dihapus. 
+
+8. Tampilkan data products yang tidak pernah ada di tabel transaction_details dengan sub-query. 

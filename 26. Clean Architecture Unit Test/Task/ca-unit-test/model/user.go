@@ -1,0 +1,16 @@
+package model
+
+import "gorm.io/gorm"
+
+type User struct {
+	*gorm.Model
+
+	Email    string `json:"email"`
+	Password string `json:"password"`
+}
+
+type UserRes struct {
+	Email    string `json:"email"`
+	Password string `json:"password"`
+	Token    string `json:"token"`
+}

@@ -1,0 +1,3 @@
+1. memahami konsep clean architecture
+2. memahami konsep unit test
+3. memahami konsep unit test dalam clean architercture
